@@ -16,7 +16,6 @@ root.wm_attributes('-topmost', 1)
 
 # check box
 lf_check = LabelFrame(root, text="打包类型")
-lf_check.grid(row=0, column=0, padx=10)
 check_box1 = Checkbutton(lf_check,
                          text="衬图",
                          variable=check_lst[0],
@@ -38,7 +37,6 @@ check_box3.pack(side=LEFT, fill=X, pady=5)
 
 # select button frame
 lf_select_btn = LabelFrame(root, text="工程选择")
-lf_select_btn.grid(row=1, column=0, sticky=E+W, padx=10)
 
 
 # select button
@@ -76,7 +74,6 @@ def submit():
 submit_txt = StringVar()
 submit_txt.set("压缩选中的YJK工程文件")
 submit_btn = Button(root, textvariable=submit_txt, command=submit)
-submit_btn.grid(row=2, column=0, sticky=E+W, padx=10, pady=10)
 
 
 # drag and drop
@@ -93,5 +90,14 @@ def dnd(dnd_files):
 
 
 windnd.hook_dropfiles(root, func=dnd)
+
+# status bar
+status_bar = Label(root, text="https://github.com/SnVuamll/YJKzip", bd=1, relief=SUNKEN, anchor=W)
+
+# grid config
+lf_check.grid(row=0, column=0, padx=10)
+lf_select_btn.grid(row=1, column=0, sticky=E+W, padx=10)
+submit_btn.grid(row=2, column=0, sticky=E+W, padx=10, pady=10)
+status_bar.grid(row=3, sticky=E+W)
 
 root.mainloop()
