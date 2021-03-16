@@ -1,2 +1,6 @@
 .idea
 test/
+__pycache__/
+build/
+dist/
+main.spec
